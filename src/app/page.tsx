@@ -3,7 +3,7 @@ import Hero from "@/components/Hero";
 import BirthdayCake from "@/components/BirthdayCake";
 import UrduQuotes from "@/components/UrduQuotes";
 import ReasonsWhy from "@/components/ReasonsWhy";
-import MemoryWall from "@/components/MemoryWall";
+import StoryMilestones from "@/components/StoryMilestones";
 import LoveLetter from "@/components/LoveLetter";
 import SurpriseBoxes from "@/components/SurpriseBoxes";
 import BouquetBuilder from "@/components/BouquetBuilder";
@@ -13,8 +13,8 @@ import FloatingParticles from "@/components/FloatingParticles";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen overflow-x-hidden selection:bg-rose-500 selection:text-white">
-      {/* Ambient Canvas Particles */}
+    <main className="relative min-h-screen overflow-x-hidden bg-[#faf7f2] text-warmBrown-950 selection:bg-beige-500 selection:text-white">
+      {/* Ambient Canvas Floating Particles */}
       <FloatingParticles />
 
       {/* Navigation */}
@@ -32,8 +32,8 @@ export default function Home() {
       {/* 10 Reasons Why I Love You Misha */}
       <ReasonsWhy />
 
-      {/* Polaroid Memory Wall with Custom Upload */}
-      <MemoryWall />
+      {/* Chapters of Us (Milestones & Romantic Moments - Zero Photo Upload Needed) */}
+      <StoryMilestones />
 
       {/* Interactive Wax Sealed Love Letter */}
       <LoveLetter />

@@ -3,7 +3,7 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Happy Birthday Misha ❤️ | Forever & Always",
-  description: "A special, magical birthday celebration crafted with love for Misha. Happy Birthday my love!",
+  description: "A special, elegant birthday celebration crafted with love for Misha. Happy Birthday my love!",
   keywords: ["Happy Birthday Misha", "Birthday Wish", "Love", "Misha"],
   openGraph: {
     title: "Happy Birthday Misha ❤️",
@@ -18,12 +18,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
-      <body className="antialiased min-h-screen bg-[#090308] text-rose-50 selection:bg-rose-500 selection:text-white">
+      <body className="antialiased min-h-screen bg-[#faf7f2] text-warmBrown-900 selection:bg-beige-500 selection:text-white">
         {children}
       </body>
     </html>

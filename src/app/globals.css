@@ -1,17 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #090308;
-  --foreground: #fff5f7;
+  --background: #faf7f2;
+  --foreground: #2b221a;
 }
 
 html {
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 body {
@@ -23,7 +23,7 @@ body {
 
 /* Custom fonts */
 .font-display {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
 }
 
 .font-romantic {
@@ -34,36 +34,33 @@ body {
   font-family: 'Noto Nastaliq Urdu', 'Amiri', 'Jameel Noori Nastaleeq', 'Urdu Typesetting', serif;
 }
 
-/* Glassmorphism */
+/* Glassmorphism Beige Styling */
 .glass-panel {
-  background: rgba(25, 12, 22, 0.65);
+  background: rgba(255, 253, 249, 0.82);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(244, 63, 94, 0.2);
-  box-shadow: 0 8px 32px 0 rgba(225, 29, 72, 0.15);
+  border: 1px solid rgba(197, 164, 126, 0.32);
+  box-shadow: 0 10px 35px -5px rgba(87, 70, 59, 0.08);
 }
 
 .glass-card {
-  background: rgba(30, 15, 26, 0.55);
+  background: rgba(255, 254, 251, 0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(251, 113, 133, 0.18);
+  border: 1px solid rgba(215, 190, 159, 0.42);
+  box-shadow: 0 4px 20px -2px rgba(87, 70, 59, 0.05);
   transition: all 0.3s ease;
 }
 
 .glass-card:hover {
-  background: rgba(45, 20, 38, 0.75);
-  border-color: rgba(251, 113, 133, 0.4);
+  background: #ffffff;
+  border-color: rgba(179, 141, 100, 0.6);
   transform: translateY(-4px);
-  box-shadow: 0 16px 40px -10px rgba(244, 63, 94, 0.25);
+  box-shadow: 0 16px 36px -8px rgba(87, 70, 59, 0.12);
 }
 
-.gold-glow {
-  box-shadow: 0 0 35px -5px rgba(250, 204, 21, 0.35);
-}
-
-.rose-glow {
-  box-shadow: 0 0 45px -8px rgba(244, 63, 94, 0.35);
+.beige-glow {
+  box-shadow: 0 0 35px -5px rgba(197, 164, 126, 0.3);
 }
 
 /* Custom Scrollbar */
@@ -72,25 +69,25 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #090308;
+  background: #faf7f2;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #be123c;
+  background: #c5a47e;
   border-radius: 9999px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #fb7185;
+  background: #96704d;
 }
 
 /* Candle flame styling */
 .flame {
   width: 14px;
   height: 26px;
-  background: radial-gradient(ellipse at bottom, #fff7ed 0%, #fde047 30%, #f97316 65%, #ef4444 95%);
+  background: radial-gradient(ellipse at bottom, #fffbeb 0%, #fde047 30%, #f59e0b 65%, #d97706 95%);
   border-radius: 50% 50% 35% 35% / 60% 60% 40% 40%;
-  filter: drop-shadow(0 0 10px #fbbf24) drop-shadow(0 0 20px #f97316);
+  filter: drop-shadow(0 0 8px #fbbf24) drop-shadow(0 0 16px #f59e0b);
   animation: flicker 1.8s infinite alternate ease-in-out;
   transform-origin: bottom center;
 }
@@ -137,21 +134,21 @@ body {
   }
 }
 
-/* Shimmer text */
+/* Warm beige & bronze shimmer text */
 .text-shimmer {
   background: linear-gradient(
     90deg,
-    #ffe4e6 0%,
-    #fb7185 25%,
-    #fde047 50%,
-    #fb7185 75%,
-    #ffe4e6 100%
+    #7a5a3f 0%,
+    #b38d64 25%,
+    #d8ad6c 50%,
+    #b38d64 75%,
+    #7a5a3f 100%
   );
   background-size: 200% auto;
   color: transparent;
   -webkit-background-clip: text;
   background-clip: text;
-  animation: shimmer 4s linear infinite;
+  animation: shimmer 4.5s linear infinite;
 }
 
 @keyframes shimmer {

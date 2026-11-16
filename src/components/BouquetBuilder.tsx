@@ -9,7 +9,6 @@ interface FlowerOption {
   emoji: string;
   name: string;
   meaning: string;
-  color: string;
 }
 
 export default function BouquetBuilder() {
@@ -17,12 +16,12 @@ export default function BouquetBuilder() {
   const [presented, setPresented] = useState(false);
 
   const flowers: FlowerOption[] = [
-    { id: "rose", emoji: "🌹", name: "Red Rose", meaning: "Timeless & unconditional love", color: "text-rose-400" },
-    { id: "tulip", emoji: "🌷", name: "Pink Tulip", meaning: "Gentle affection & adoration", color: "text-pink-400" },
-    { id: "sunflower", emoji: "🌻", name: "Sunflower", meaning: "Radiant warmth & pure sunshine", color: "text-amber-400" },
-    { id: "lily", emoji: "🪷", name: "Lotus & Lily", meaning: "Elegance, grace & serenity", color: "text-rose-200" },
-    { id: "lavender", emoji: "🪻", name: "Lavender", meaning: "Devotion & peaceful dreams", color: "text-purple-400" },
-    { id: "daisy", emoji: "🌼", name: "Daisy", meaning: "Spontaneous laughter & happiness", color: "text-yellow-300" },
+    { id: "rose", emoji: "🌹", name: "Red Rose", meaning: "Timeless & unconditional love" },
+    { id: "tulip", emoji: "🌷", name: "Pink Tulip", meaning: "Gentle affection & adoration" },
+    { id: "sunflower", emoji: "🌻", name: "Sunflower", meaning: "Radiant warmth & pure sunshine" },
+    { id: "lily", emoji: "🪷", name: "Lotus & Lily", meaning: "Elegance, grace & serenity" },
+    { id: "lavender", emoji: "🪻", name: "Lavender", meaning: "Devotion & peaceful dreams" },
+    { id: "daisy", emoji: "🌼", name: "Daisy", meaning: "Spontaneous laughter & joy" },
   ];
 
   const addFlower = (emoji: string) => {
@@ -39,24 +38,24 @@ export default function BouquetBuilder() {
   const presentBouquet = () => {
     setPresented(true);
     confetti({
-      particleCount: 60,
+      particleCount: 50,
       spread: 80,
-      colors: ["#fb7185", "#f43f5e", "#fda4af", "#fde047", "#34d399"],
+      colors: ["#c5a47e", "#b38d64", "#d7be9f", "#e6d5bf", "#f5e8d3"],
     });
   };
 
   return (
     <section className="relative py-20 px-4 max-w-4xl mx-auto text-center">
-      <div className="glass-panel rounded-3xl p-6 sm:p-10 border border-rose-500/30 shadow-2xl relative overflow-hidden">
+      <div className="glass-panel rounded-3xl p-6 sm:p-10 border border-beige-300 shadow-xl relative overflow-hidden">
         {/* Header */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-rose-950/60 border border-rose-500/30 text-rose-300 text-xs font-semibold mb-3">
-          <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-beige-100 border border-beige-300 text-warmBrown-700 text-xs font-semibold mb-3">
+          <Sparkles className="w-3.5 h-3.5 text-beige-600" />
           <span>Interactive Flower Garden</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-white mb-2">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-warmBrown-950 mb-2">
           Build a Birthday Bouquet for Misha 💐
         </h2>
-        <p className="text-rose-200/80 text-sm sm:text-base max-w-md mx-auto mb-8">
+        <p className="text-warmBrown-600 text-sm sm:text-base max-w-md mx-auto mb-8">
           Tap each flower below to add it to your custom bouquet. Every bloom carries a
           special meaning!
         </p>
@@ -68,13 +67,13 @@ export default function BouquetBuilder() {
               key={f.id}
               onClick={() => addFlower(f.emoji)}
               disabled={bouquet.length >= 12}
-              className="p-3 rounded-2xl glass-card border border-rose-500/20 hover:border-rose-400/50 hover:bg-rose-950/50 transition-all flex flex-col items-center group active:scale-90"
+              className="p-3 rounded-2xl glass-card border border-beige-300 hover:border-beige-500 hover:bg-white transition-all flex flex-col items-center group active:scale-90"
             >
               <span className="text-3xl group-hover:scale-125 transition-transform mb-1">
                 {f.emoji}
               </span>
-              <span className="text-xs font-semibold text-rose-100">{f.name}</span>
-              <span className="text-[10px] text-rose-300/70 leading-tight mt-0.5">
+              <span className="text-xs font-semibold text-warmBrown-900">{f.name}</span>
+              <span className="text-[10px] text-warmBrown-500 leading-tight mt-0.5">
                 {f.meaning}
               </span>
             </button>
@@ -82,14 +81,14 @@ export default function BouquetBuilder() {
         </div>
 
         {/* Assembled Bouquet Display */}
-        <div className="p-6 rounded-2xl bg-black/40 border border-rose-500/30 max-w-lg mx-auto mb-6 relative">
-          <span className="text-xs font-mono text-rose-400 uppercase tracking-widest block mb-2">
+        <div className="p-6 rounded-2xl bg-white border border-beige-300 max-w-lg mx-auto mb-6 relative shadow-sm">
+          <span className="text-xs font-mono text-warmBrown-600 uppercase tracking-widest block mb-2 font-bold">
             Misha&apos;s Flower Basket ({bouquet.length}/12 blooms)
           </span>
 
           <div className="min-h-[70px] flex flex-wrap items-center justify-center gap-2 text-3xl sm:text-4xl py-2">
             {bouquet.length === 0 ? (
-              <span className="text-xs text-rose-300/50 italic">
+              <span className="text-xs text-warmBrown-400 italic">
                 Your basket is empty. Tap any flower above to start!
               </span>
             ) : (
@@ -105,12 +104,11 @@ export default function BouquetBuilder() {
             )}
           </div>
 
-          {/* Ribbon Wrap */}
           {bouquet.length > 0 && (
-            <div className="mt-3 pt-3 border-t border-rose-500/20 text-xs text-rose-200/90 font-serif italic flex items-center justify-center gap-2">
-              <Heart className="w-3.5 h-3.5 text-rose-400 fill-rose-400" />
-              <span>Wrapped in golden ribbon with eternal love</span>
-              <Heart className="w-3.5 h-3.5 text-rose-400 fill-rose-400" />
+            <div className="mt-3 pt-3 border-t border-beige-200 text-xs text-warmBrown-700 font-serif italic flex items-center justify-center gap-2">
+              <Heart className="w-3.5 h-3.5 text-beige-600 fill-beige-600" />
+              <span>Wrapped in golden linen ribbon with eternal love</span>
+              <Heart className="w-3.5 h-3.5 text-beige-600 fill-beige-600" />
             </div>
           )}
         </div>
@@ -120,7 +118,7 @@ export default function BouquetBuilder() {
           {bouquet.length > 0 && !presented && (
             <button
               onClick={presentBouquet}
-              className="px-6 py-2.5 rounded-full bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-400 hover:to-pink-500 text-white font-bold text-sm shadow-xl shadow-rose-600/30 hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
+              className="px-6 py-2.5 rounded-full bg-gradient-to-r from-beige-700 via-warmBrown-700 to-beige-800 hover:from-beige-800 hover:to-warmBrown-800 text-white font-bold text-sm shadow-md shadow-beige-900/15 hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
             >
               <span>Present Bouquet to Misha 💐</span>
             </button>
@@ -129,7 +127,7 @@ export default function BouquetBuilder() {
           {bouquet.length > 0 && (
             <button
               onClick={clearBouquet}
-              className="px-4 py-2.5 rounded-full bg-rose-950/60 hover:bg-rose-900 border border-rose-500/30 text-rose-300 text-xs font-semibold flex items-center gap-1.5 transition-all"
+              className="px-4 py-2.5 rounded-full bg-beige-100 hover:bg-beige-200 border border-beige-300 text-warmBrown-800 text-xs font-semibold flex items-center gap-1.5 transition-all"
             >
               <RotateCcw className="w-3.5 h-3.5" />
               <span>Reset Garden</span>
@@ -139,11 +137,11 @@ export default function BouquetBuilder() {
 
         {/* Presented Message */}
         {presented && (
-          <div className="mt-6 p-4 rounded-xl bg-gradient-to-r from-rose-950/80 to-pink-950/80 border border-rose-400/40 text-center max-w-md mx-auto animate-in fade-in duration-300">
-            <p className="font-romantic text-2xl text-rose-200 mb-1">
+          <div className="mt-6 p-4 rounded-xl bg-white border border-beige-300 text-center max-w-md mx-auto shadow-sm animate-in fade-in duration-300">
+            <p className="font-romantic text-2xl text-warmBrown-900 mb-1">
               For You, Misha ❤️
             </p>
-            <p className="text-xs text-rose-100/90 leading-relaxed">
+            <p className="text-xs text-warmBrown-700 leading-relaxed">
               May your year bloom with endless laughter, gentle peace, and all the sweet
               scents of happiness!
             </p>

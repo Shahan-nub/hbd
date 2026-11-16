@@ -11,21 +11,17 @@ export default function AudioPlayer() {
   const isPlayingRef = useRef(false);
   const loopTimerRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Romantic pentatonic chord progression (Fmaj9, Cmaj7, Dm9, Am7, Bbmaj7)
+  // Romantic acoustic chord progression (Cmaj7, Am9, Fmaj7, G6)
   const notes = [
-    // Fmaj9
-    [174.61, 261.63, 329.63, 349.23, 440.0],
-    // Cmaj7
     [130.81, 196.0, 246.94, 261.63, 329.63],
-    // Dm9
-    [146.83, 220.0, 261.63, 293.66, 349.23],
-    // Bbmaj7
-    [116.54, 174.61, 220.0, 233.08, 293.66],
+    [110.0, 164.81, 220.0, 261.63, 329.63],
+    [174.61, 220.0, 261.63, 329.63, 392.0],
+    [196.0, 246.94, 293.66, 329.63, 392.0],
   ];
 
   const melodyNotes = [
-    349.23, 392.0, 440.0, 523.25, 440.0, 392.0, 349.23, 329.63,
-    261.63, 293.66, 329.63, 349.23, 392.0, 440.0, 523.25, 587.33,
+    329.63, 392.0, 440.0, 523.25, 440.0, 392.0, 329.63, 293.66,
+    261.63, 293.66, 329.63, 392.0, 440.0, 523.25, 587.33, 659.25,
   ];
 
   const playTone = (
@@ -35,7 +31,7 @@ export default function AudioPlayer() {
     time: number,
     duration: number,
     type: OscillatorType = "sine",
-    vol: number = 0.15
+    vol: number = 0.12
   ) => {
     try {
       const osc = ctx.createOscillator();
@@ -44,7 +40,6 @@ export default function AudioPlayer() {
       osc.type = type;
       osc.frequency.setValueAtTime(freq, time);
 
-      // Soft envelope for dreamy music-box feel
       noteGain.gain.setValueAtTime(0.0001, time);
       noteGain.gain.exponentialRampToValueAtTime(vol, time + 0.05);
       noteGain.gain.exponentialRampToValueAtTime(0.0001, time + duration);
@@ -55,7 +50,7 @@ export default function AudioPlayer() {
       osc.start(time);
       osc.stop(time + duration);
     } catch {
-      // Audio node scheduling safe guard
+      // Safe guard
     }
   };
 
@@ -69,17 +64,14 @@ export default function AudioPlayer() {
       const now = ctx.currentTime;
       const currentChord = notes[chordIndex % notes.length];
 
-      // Play soft warm chord tones
       currentChord.forEach((freq, idx) => {
-        playTone(ctx, gain, freq, now + idx * 0.08, 3.2, "triangle", 0.04);
+        playTone(ctx, gain, freq, now + idx * 0.08, 3.2, "triangle", 0.035);
       });
 
-      // Play gentle music-box melody notes
       for (let i = 0; i < 4; i++) {
         const mFreq = melodyNotes[(melodyIndex + i) % melodyNotes.length];
-        playTone(ctx, gain, mFreq, now + i * 0.7, 1.2, "sine", 0.07);
-        // Harmonic bell overtone
-        playTone(ctx, gain, mFreq * 2, now + i * 0.7 + 0.02, 0.8, "sine", 0.02);
+        playTone(ctx, gain, mFreq, now + i * 0.7, 1.2, "sine", 0.06);
+        playTone(ctx, gain, mFreq * 2, now + i * 0.7 + 0.02, 0.8, "sine", 0.015);
       }
 
       chordIndex++;
@@ -146,15 +138,14 @@ export default function AudioPlayer() {
 
   return (
     <div className="fixed bottom-5 right-5 z-50 flex items-center gap-3">
-      {/* Floating Pill Player */}
-      <div className="glass-panel px-4 py-2.5 rounded-full flex items-center gap-3 shadow-2xl border border-rose-500/30 hover:border-rose-400/60 transition-all duration-300">
+      <div className="glass-panel px-4 py-2.5 rounded-full flex items-center gap-3 shadow-xl border border-beige-300/80 hover:border-beige-500/70 transition-all duration-300">
         <button
           onClick={toggleMusic}
           aria-label={isPlaying ? "Pause Romantic Music" : "Play Romantic Music"}
           className={`relative p-2 rounded-full transition-all duration-300 ${
             isPlaying
-              ? "bg-rose-500 text-white shadow-lg shadow-rose-500/50 scale-105"
-              : "bg-rose-950/60 text-rose-300 hover:text-white hover:bg-rose-900/60"
+              ? "bg-beige-700 text-white shadow-md shadow-beige-700/30 scale-105"
+              : "bg-beige-200/80 text-warmBrown-700 hover:bg-beige-300"
           }`}
         >
           {isPlaying ? (
@@ -166,20 +157,20 @@ export default function AudioPlayer() {
 
         <div className="flex flex-col">
           <div className="flex items-center gap-1.5">
-            <Music className="w-3.5 h-3.5 text-rose-400 animate-spin-slow" />
-            <span className="text-xs font-semibold text-rose-100 tracking-wide">
-              {isPlaying ? "Misha's Lullaby" : "Play Soft Melody"}
+            <Music className="w-3.5 h-3.5 text-beige-700 animate-spin-slow" />
+            <span className="text-xs font-semibold text-warmBrown-900 tracking-wide">
+              {isPlaying ? "Misha's Melody" : "Play Soft Melody"}
             </span>
             {isPlaying && (
               <span className="flex gap-0.5 items-end h-3 ml-1">
-                <span className="w-0.5 h-2 bg-rose-400 animate-bounce" />
-                <span className="w-0.5 h-3 bg-pink-300 animate-bounce [animation-delay:0.15s]" />
-                <span className="w-0.5 h-1.5 bg-rose-400 animate-bounce [animation-delay:0.3s]" />
+                <span className="w-0.5 h-2 bg-beige-600 animate-bounce" />
+                <span className="w-0.5 h-3 bg-beige-400 animate-bounce [animation-delay:0.15s]" />
+                <span className="w-0.5 h-1.5 bg-beige-600 animate-bounce [animation-delay:0.3s]" />
               </span>
             )}
           </div>
-          <span className="text-[10px] text-rose-300/70">
-            {isPlaying ? "Romantic Piano & Chimes" : "Tap to enjoy music"}
+          <span className="text-[10px] text-warmBrown-500">
+            {isPlaying ? "Acoustic Piano & Chimes" : "Tap to enjoy music"}
           </span>
         </div>
 
@@ -191,7 +182,7 @@ export default function AudioPlayer() {
             step="0.05"
             value={volume}
             onChange={(e) => setVolume(parseFloat(e.target.value))}
-            className="w-16 h-1 bg-rose-900/60 rounded-lg appearance-none cursor-pointer accent-rose-400"
+            className="w-16 h-1 bg-beige-300 rounded-lg appearance-none cursor-pointer accent-beige-700"
             title="Music Volume"
           />
         )}

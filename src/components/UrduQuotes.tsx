@@ -25,7 +25,7 @@ export default function UrduQuotes() {
         "They say people gaze at her until their eyes are full of wonder;\nso in her world, I long to pause and stay forever.",
       poet: "Ahmad Faraz — Classical Urdu Masterpiece",
       noteForMisha:
-        "To me, Misha, this verse was written just for you. The entire universe quiets down in awe whenever you smile. There is no place I would rather be than by your side.",
+        "To me, Misha, this verse was written just for you. The entire world quiets down in awe whenever you smile. There is no place I would rather be than in your peaceful world.",
       likes: 520,
     },
     {
@@ -36,7 +36,7 @@ export default function UrduQuotes() {
         "Your face illuminates my entire universe;\nyou live within my soul like an everlasting fragrance.",
       poet: "Soulful Urdu Romance",
       noteForMisha:
-        "Long before I could find the right words to describe what you mean to me, you were already every prayer my heart ever whispered. Happy Birthday to my soul's sweetest haven.",
+        "Long before I could find the right words to describe what you mean to me, you were already every prayer my heart ever whispered. Happy Birthday to my soul's sweetest home.",
       likes: 618,
     },
   ]);
@@ -54,9 +54,9 @@ export default function UrduQuotes() {
     );
 
     confetti({
-      particleCount: 25,
+      particleCount: 22,
       spread: 60,
-      colors: ["#f43f5e", "#fda4af", "#fde047"],
+      colors: ["#c5a47e", "#b38d64", "#d7be9f", "#e6d5bf"],
     });
   };
 
@@ -64,17 +64,17 @@ export default function UrduQuotes() {
     <section id="urdu-quotes" className="relative py-20 px-4 max-w-5xl mx-auto">
       {/* Decorative Header */}
       <div className="text-center mb-14">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-amber-500/10 via-rose-500/20 to-amber-500/10 border border-amber-400/30 text-amber-300 text-xs font-semibold mb-3">
-          <Feather className="w-4 h-4 text-amber-300" />
+        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-beige-100 border border-beige-300 text-warmBrown-700 text-xs font-semibold mb-3">
+          <Feather className="w-4 h-4 text-beige-600" />
           <span>Shayari &amp; Words From The Soul</span>
-          <Sparkles className="w-4 h-4 text-rose-300" />
+          <Sparkles className="w-4 h-4 text-beige-500" />
         </div>
-        <h2 className="text-3xl sm:text-5xl font-display font-bold text-white mb-4">
+        <h2 className="text-3xl sm:text-5xl font-display font-bold text-warmBrown-950 mb-4">
           Timeless Urdu Quotes For Misha ✨
         </h2>
-        <p className="text-rose-200/80 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
+        <p className="text-warmBrown-600 text-sm sm:text-base max-w-xl mx-auto leading-relaxed">
           Some feelings are so profound that only the soulful elegance of Urdu poetry
-          and its translation can even begin to capture what you mean to me.
+          and its English meaning can even begin to capture what you mean to me.
         </p>
       </div>
 
@@ -83,28 +83,28 @@ export default function UrduQuotes() {
         {quotesState.map((quote) => (
           <div
             key={quote.id}
-            className="glass-card rounded-3xl p-6 sm:p-8 border border-rose-500/25 relative flex flex-col justify-between overflow-hidden group hover:border-amber-400/40"
+            className="glass-card rounded-3xl p-6 sm:p-8 border border-beige-300 relative flex flex-col justify-between overflow-hidden group hover:border-beige-500"
           >
             {/* Corner Ornamental flourish */}
-            <div className="absolute top-0 right-0 w-28 h-28 bg-gradient-to-br from-rose-500/10 to-amber-400/10 rounded-bl-full pointer-events-none" />
+            <div className="absolute top-0 right-0 w-28 h-28 bg-gradient-to-br from-beige-200/50 to-champagne-200/30 rounded-bl-full pointer-events-none" />
 
             <div>
               {/* Quote Badge */}
               <div className="flex items-center justify-between mb-5">
-                <span className="px-3 py-1 rounded-full bg-rose-950/70 border border-rose-400/30 text-amber-300 text-xs font-semibold tracking-wider uppercase flex items-center gap-1.5">
-                  <BookOpen className="w-3.5 h-3.5 text-amber-300" />
+                <span className="px-3 py-1 rounded-full bg-beige-100 border border-beige-300 text-warmBrown-800 text-xs font-semibold tracking-wider uppercase flex items-center gap-1.5">
+                  <BookOpen className="w-3.5 h-3.5 text-beige-600" />
                   Verse {quote.id}
                 </span>
 
                 <button
                   onClick={() => handleCopy(quote)}
-                  className="p-2 rounded-full bg-rose-950/50 hover:bg-rose-900/60 border border-rose-500/20 text-rose-300 hover:text-white transition-all flex items-center gap-1.5 text-xs"
+                  className="p-2 rounded-full bg-beige-100 hover:bg-beige-200 border border-beige-300 text-warmBrown-700 hover:text-warmBrown-950 transition-all flex items-center gap-1.5 text-xs"
                   title="Copy quote and translation"
                 >
                   {copiedId === quote.id ? (
                     <>
-                      <Check className="w-3.5 h-3.5 text-emerald-400" />
-                      <span className="text-emerald-400 font-medium">Copied!</span>
+                      <Check className="w-3.5 h-3.5 text-emerald-600" />
+                      <span className="text-emerald-700 font-medium">Copied!</span>
                     </>
                   ) : (
                     <>
@@ -117,7 +117,7 @@ export default function UrduQuotes() {
 
               {/* Urdu Script Calligraphy */}
               <div
-                className="font-urdu text-2xl sm:text-3xl text-right leading-[2.2] text-amber-100/90 mb-5 p-4 rounded-2xl bg-black/40 border border-amber-400/15 select-text drop-shadow-[0_2px_12px_rgba(250,204,21,0.15)]"
+                className="font-urdu text-2xl sm:text-3xl text-right leading-[2.2] text-warmBrown-950 mb-5 p-4 rounded-2xl bg-beige-50/80 border border-beige-200 select-text"
                 dir="rtl"
               >
                 {quote.urduScript}
@@ -125,32 +125,32 @@ export default function UrduQuotes() {
 
               {/* Roman Urdu Transliteration */}
               <div className="mb-4">
-                <span className="text-[11px] font-bold tracking-widest text-amber-400 uppercase block mb-1">
+                <span className="text-[11px] font-bold tracking-widest text-beige-700 uppercase block mb-1">
                   Roman Urdu
                 </span>
-                <p className="font-serif italic text-base sm:text-lg text-rose-100 leading-relaxed whitespace-pre-line">
+                <p className="font-serif italic text-base sm:text-lg text-warmBrown-900 leading-relaxed whitespace-pre-line">
                   &ldquo;{quote.romanUrdu}&rdquo;
                 </p>
               </div>
 
               {/* English Translation */}
-              <div className="mb-6 p-4 rounded-xl bg-gradient-to-r from-rose-950/40 to-transparent border-l-2 border-rose-400">
-                <span className="text-[11px] font-bold tracking-widest text-rose-300 uppercase block mb-1">
+              <div className="mb-6 p-4 rounded-xl bg-beige-100/60 border-l-2 border-beige-600">
+                <span className="text-[11px] font-bold tracking-widest text-warmBrown-700 uppercase block mb-1">
                   English Translation
                 </span>
-                <p className="text-sm sm:text-base text-rose-50 font-medium leading-relaxed whitespace-pre-line">
+                <p className="text-sm sm:text-base text-warmBrown-900 font-medium leading-relaxed whitespace-pre-line">
                   &ldquo;{quote.englishTranslation}&rdquo;
                 </p>
               </div>
 
               {/* Attribution */}
-              <div className="text-xs text-rose-300/60 font-serif italic mb-4">
+              <div className="text-xs text-warmBrown-500 font-serif italic mb-4">
                 — {quote.poet}
               </div>
 
               {/* Personal Dedication to Misha */}
-              <div className="p-4 rounded-xl bg-rose-950/50 border border-rose-500/20 text-xs sm:text-sm text-rose-200/90 leading-relaxed mb-4">
-                <span className="font-semibold text-rose-300 block mb-1">
+              <div className="p-4 rounded-xl bg-beige-50 border border-beige-200 text-xs sm:text-sm text-warmBrown-700 leading-relaxed mb-4">
+                <span className="font-semibold text-warmBrown-900 block mb-1">
                   💌 Why This Belongs to You, Misha:
                 </span>
                 {quote.noteForMisha}
@@ -158,17 +158,17 @@ export default function UrduQuotes() {
             </div>
 
             {/* Bottom Actions */}
-            <div className="pt-4 border-t border-rose-500/20 flex items-center justify-between">
+            <div className="pt-4 border-t border-beige-200 flex items-center justify-between">
               <button
                 onClick={() => handleLike(quote.id)}
-                className="px-3.5 py-1.5 rounded-full bg-rose-900/40 hover:bg-rose-800/60 border border-rose-500/30 text-rose-200 hover:text-white text-xs font-semibold flex items-center gap-1.5 transition-all active:scale-90"
+                className="px-3.5 py-1.5 rounded-full bg-beige-100 hover:bg-beige-200 border border-beige-300 text-warmBrown-800 text-xs font-semibold flex items-center gap-1.5 transition-all active:scale-90"
               >
-                <Heart className="w-3.5 h-3.5 text-rose-400 fill-rose-400 animate-pulse" />
+                <Heart className="w-3.5 h-3.5 text-beige-700 fill-beige-700" />
                 <span>Love This</span>
-                <span className="ml-1 text-rose-300/80">{quote.likes}</span>
+                <span className="ml-1 text-warmBrown-600 font-mono">{quote.likes}</span>
               </button>
 
-              <span className="font-romantic text-xl text-rose-300">
+              <span className="font-romantic text-xl text-warmBrown-600">
                 Forever Misha
               </span>
             </div>

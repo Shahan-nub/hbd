@@ -1,16 +1,22 @@
 # 🎂 Happy Birthday Misha ❤️
 
-A magical, interactive, and romantic Next.js birthday website crafted especially for **Misha**.
+An elegant, warm **beige-themed** interactive Next.js birthday website crafted especially for **Misha**.
 
 ---
 
-## ✨ Features Included
+## ✨ Design & Features
 
-1. **Ambient Particle System**: Twinkling stars, floating rose petals, and hearts with cursor interaction.
-2. **Interactive 3D Birthday Cake**:
-   - Realistic animated candle flames.
-   - Click to **Blow Out Candles & Make a Wish** with smoke effect, sound chime, and massive confetti celebration.
-   - Secret wish reveal card & "Relight Candles" option.
+- **Warm Beige & Champagne Aesthetic**: Soft ivory linen, warm beige, almond cream, espresso typography, and subtle golden bronze accents.
+- **100% React Functional Components**: Modern, clean functional components using React hooks (`useState`, `useEffect`, `useRef`).
+- **No Photo Uploads Required**: Zero picture upload inputs or file picking required.
+
+### 💖 Interactive Sections:
+
+1. **Ambient Floating Particles**: Gentle floating beige/gold hearts and twinkling stars.
+2. **Interactive Birthday Cake**:
+   - Tiered almond-vanilla cake with animated flickering candles.
+   - Click to **Blow Out Candles & Make a Wish** with smoke effect, sound chime, and celebratory confetti.
+   - Secret wish reveal card & "Light Candles Again" button.
 3. **2 Classic Urdu Quotes in English**:
    - **Quote 1 (Ahmad Faraz)**:
      - *Urdu*: سُنا ہے لوگ اُسے آنکھ بھر کے دیکھتے ہیں، سو اُس کے شہر میں کچھ دن ٹھہر کے دیکھتے ہیں
@@ -20,17 +26,16 @@ A magical, interactive, and romantic Next.js birthday website crafted especially
      - *Urdu*: تیرے چہرے سے ہے روشن مری دنیا ساری، تُو مری روح میں خوشبو کی طرح بستی ہے
      - *Roman Urdu*: *"Tere chehre se hai roshan meri duniya saari, tu meri rooh mein khushboo ki tarah basti hai..."*
      - *English Translation*: *"Your face illuminates my entire universe; you live within my soul like an everlasting fragrance."*
-   - Includes 1-click **Copy Quote** and **Like reaction** counters.
-4. **10 Reasons Why I Love You**:
-   - Interactive flip cards with progress meter and unlock-all fireworks.
-5. **Polaroid Memory Wall**:
-   - Vintage Polaroid photos with washi tape and handwritten romantic captions.
-   - **Interactive Photo Upload**: Upload actual photos of Misha right in the browser (saved locally!).
+   - Includes 1-click **Copy Quote** and heart reaction buttons.
+4. **10 Reasons Why I Adore You**:
+   - Interactive flip cards with progress counter and completion celebrations.
+5. **Chapters of Us (Milestones Timeline)**:
+   - Curated romantic vignettes (The First Spark, 2:00 AM Conversations, Coffee & Laughter, Golden Hour Glow, My Anchor, and Celebrating Misha Day) with interactive heart counters. Zero photos required!
 6. **Sealed Vintage Love Letter**:
-   - Realistic wax-sealed envelope labeled *"To: Miss Misha ❤️"*.
+   - Beige wax-sealed envelope labeled *"To: Miss Misha ❤️"*.
    - Tap the golden wax seal to unseal and read the heartfelt handwritten letter.
-7. **Surprise Mystery Boxes & Love Coupons**:
-   - 4 interactive wrapped gifts with ribbons that unwrap into redeemable love vouchers (Unlimited Forehead Kisses, Dream Dinner Date, Late Night Drive, Queen for the Day).
+7. **Surprise Mystery Boxes & Love Vouchers**:
+   - 4 interactive wrapped gifts with ribbons that unwrap into redeemable love coupons (Unlimited Forehead Kisses, Dream Dinner Date, Late Night Drive, Queen for the Day).
 8. **Virtual Bouquet Builder**:
    - Pick roses, tulips, sunflowers, lilies, lavender, and daisies to build Misha's birthday bouquet with golden ribbon.
 9. **Ambient Music Player & Sound Chimes**:
@@ -43,10 +48,6 @@ A magical, interactive, and romantic Next.js birthday website crafted especially
 ## 🚀 How to Run Locally
 
 ```bash
-# 1. Install dependencies (already installed)
-npm install
-
-# 2. Run development server
 npm run dev
 ```
 
@@ -54,24 +55,13 @@ Open [http://localhost:3000](http://localhost:3000) in your browser.
 
 ---
 
-## 🌐 How to Deploy on Vercel
+## 🌐 Deploying to Vercel
 
-### Option 1: Via GitHub (Recommended)
-1. Initialize/push your code to a GitHub repository:
+1. Commit and push to GitHub:
    ```bash
    git add .
-   git commit -m "feat: Misha's Happy Birthday Website"
-   git branch -M main
-   git remote add origin https://github.com/YOUR_USERNAME/misha-birthday.git
-   git push -u origin main
+   git commit -m "feat: warm beige aesthetic birthday website for Misha"
+   git push origin main
    ```
-2. Go to [vercel.com](https://vercel.com) and click **"Add New Project"**.
-3. Import your GitHub repository.
-4. Click **"Deploy"** (Vercel automatically detects Next.js).
-5. Share the live link with Misha! ❤️
-
-### Option 2: Via Vercel CLI
-```bash
-npx vercel
-```
-Follow the quick prompts in your terminal.
+2. Log into [vercel.com](https://vercel.com) and click **"Add New Project"**.
+3. Select your repository and click **"Deploy"**.

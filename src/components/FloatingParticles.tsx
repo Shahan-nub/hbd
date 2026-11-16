@@ -10,7 +10,6 @@ interface Particle {
   speedX: number;
   opacity: number;
   type: "star" | "heart" | "sparkle";
-  hue: number;
   rot: number;
   rotSpeed: number;
 }
@@ -37,20 +36,19 @@ export default function FloatingParticles() {
     window.addEventListener("resize", handleResize);
 
     const particles: Particle[] = [];
-    const particleCount = Math.min(65, Math.floor(width / 22));
+    const particleCount = Math.min(50, Math.floor(width / 26));
 
     for (let i = 0; i < particleCount; i++) {
       particles.push({
         x: Math.random() * width,
         y: Math.random() * height,
-        size: Math.random() * 4 + 1.5,
-        speedY: -(Math.random() * 0.45 + 0.15),
-        speedX: (Math.random() - 0.5) * 0.35,
-        opacity: Math.random() * 0.65 + 0.2,
-        type: Math.random() > 0.65 ? "heart" : Math.random() > 0.4 ? "star" : "sparkle",
-        hue: Math.random() > 0.5 ? 345 : 45, // rose pink or warm champagne gold
+        size: Math.random() * 3.5 + 1.2,
+        speedY: -(Math.random() * 0.4 + 0.12),
+        speedX: (Math.random() - 0.5) * 0.3,
+        opacity: Math.random() * 0.5 + 0.2,
+        type: Math.random() > 0.65 ? "heart" : Math.random() > 0.35 ? "sparkle" : "star",
         rot: Math.random() * Math.PI * 2,
-        rotSpeed: (Math.random() - 0.5) * 0.02,
+        rotSpeed: (Math.random() - 0.5) * 0.015,
       });
     }
 
@@ -68,13 +66,11 @@ export default function FloatingParticles() {
       context.beginPath();
       const topCurveHeight = size * 0.3;
       context.moveTo(0, topCurveHeight);
-      // top left curve
       context.bezierCurveTo(-size / 2, -topCurveHeight, -size, topCurveHeight / 2, 0, size);
-      // top right curve
       context.bezierCurveTo(size, topCurveHeight / 2, size / 2, -topCurveHeight, 0, topCurveHeight);
-      context.fillStyle = `rgba(244, 63, 94, ${opacity * 0.55})`;
-      context.shadowColor = "rgba(251, 113, 133, 0.6)";
-      context.shadowBlur = 10;
+      context.fillStyle = `rgba(197, 164, 126, ${opacity * 0.45})`;
+      context.shadowColor = "rgba(215, 190, 159, 0.4)";
+      context.shadowBlur = 6;
       context.fill();
       context.restore();
     };
@@ -88,10 +84,10 @@ export default function FloatingParticles() {
     ) => {
       context.save();
       context.beginPath();
-      context.arc(x, y, size * 0.6, 0, Math.PI * 2);
-      context.fillStyle = `rgba(254, 240, 138, ${opacity})`;
-      context.shadowColor = "rgba(250, 204, 21, 0.8)";
-      context.shadowBlur = 8;
+      context.arc(x, y, size * 0.55, 0, Math.PI * 2);
+      context.fillStyle = `rgba(216, 173, 108, ${opacity * 0.6})`;
+      context.shadowColor = "rgba(238, 216, 182, 0.5)";
+      context.shadowBlur = 6;
       context.fill();
       context.restore();
     };
@@ -109,16 +105,16 @@ export default function FloatingParticles() {
       context.rotate(rot);
       context.beginPath();
       for (let i = 0; i < 4; i++) {
-        context.lineTo(Math.cos((i * Math.PI) / 2) * size * 1.6, Math.sin((i * Math.PI) / 2) * size * 1.6);
+        context.lineTo(Math.cos((i * Math.PI) / 2) * size * 1.5, Math.sin((i * Math.PI) / 2) * size * 1.5);
         context.lineTo(
-          Math.cos((i * Math.PI) / 2 + Math.PI / 4) * (size * 0.3),
-          Math.sin((i * Math.PI) / 2 + Math.PI / 4) * (size * 0.3)
+          Math.cos((i * Math.PI) / 2 + Math.PI / 4) * (size * 0.28),
+          Math.sin((i * Math.PI) / 2 + Math.PI / 4) * (size * 0.28)
         );
       }
       context.closePath();
-      context.fillStyle = `rgba(255, 228, 230, ${opacity * 0.75})`;
-      context.shadowColor = "rgba(255, 255, 255, 0.7)";
-      context.shadowBlur = 6;
+      context.fillStyle = `rgba(179, 141, 100, ${opacity * 0.5})`;
+      context.shadowColor = "rgba(228, 196, 146, 0.4)";
+      context.shadowBlur = 5;
       context.fill();
       context.restore();
     };
@@ -140,7 +136,7 @@ export default function FloatingParticles() {
         if (p.x > width + 20) p.x = -20;
 
         if (p.type === "heart") {
-          drawHeart(ctx, p.x, p.y, p.size * 2.2, p.opacity, p.rot);
+          drawHeart(ctx, p.x, p.y, p.size * 2, p.opacity, p.rot);
         } else if (p.type === "star") {
           drawStar(ctx, p.x, p.y, p.size, p.opacity);
         } else {
@@ -162,7 +158,7 @@ export default function FloatingParticles() {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 pointer-events-none z-0 opacity-80"
+      className="fixed inset-0 pointer-events-none z-0 opacity-70"
       aria-hidden="true"
     />
   );
