@@ -45,31 +45,31 @@ export default function BouquetBuilder() {
   };
 
   return (
-    <section className="relative py-20 px-4 max-w-4xl mx-auto text-center">
-      <div className="glass-panel rounded-3xl p-6 sm:p-10 border border-beige-300 shadow-xl relative overflow-hidden">
+    <section className="relative py-14 sm:py-20 px-3 sm:px-4 max-w-4xl mx-auto text-center">
+      <div className="glass-panel rounded-2xl sm:rounded-3xl p-4 sm:p-10 border border-beige-300 shadow-xl relative overflow-hidden">
         {/* Header */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-beige-100 border border-beige-300 text-warmBrown-700 text-xs font-semibold mb-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-beige-100 border border-beige-300 text-warmBrown-700 text-xs font-semibold mb-2 sm:mb-3">
           <Sparkles className="w-3.5 h-3.5 text-beige-600" />
           <span>Interactive Flower Garden</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-warmBrown-950 mb-2">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-bold text-warmBrown-950 mb-2">
           Build a Birthday Bouquet for Misha 💐
         </h2>
-        <p className="text-warmBrown-600 text-sm sm:text-base max-w-md mx-auto mb-8">
+        <p className="text-warmBrown-600 text-xs sm:text-base max-w-md mx-auto mb-6 sm:mb-8 px-2">
           Tap each flower below to add it to your custom bouquet. Every bloom carries a
           special meaning!
         </p>
 
         {/* Flower Selection Buttons */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3 mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-2 sm:gap-3 mb-6 sm:mb-8">
           {flowers.map((f) => (
             <button
               key={f.id}
               onClick={() => addFlower(f.emoji)}
               disabled={bouquet.length >= 12}
-              className="p-3 rounded-2xl glass-card border border-beige-300 hover:border-beige-500 hover:bg-white transition-all flex flex-col items-center group active:scale-90"
+              className="p-2 sm:p-3 rounded-xl sm:rounded-2xl glass-card border border-beige-300 hover:border-beige-500 hover:bg-white transition-all flex flex-col items-center group active:scale-90"
             >
-              <span className="text-3xl group-hover:scale-125 transition-transform mb-1">
+              <span className="text-2xl sm:text-3xl group-hover:scale-125 transition-transform mb-1">
                 {f.emoji}
               </span>
               <span className="text-xs font-semibold text-warmBrown-900">{f.name}</span>

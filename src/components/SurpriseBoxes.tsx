@@ -106,23 +106,23 @@ export default function SurpriseBoxes() {
   };
 
   return (
-    <section id="gifts" className="relative py-20 px-4 max-w-6xl mx-auto">
+    <section id="gifts" className="relative py-14 sm:py-20 px-3 sm:px-4 max-w-6xl mx-auto">
       {/* Header */}
-      <div className="text-center mb-12">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-beige-100 border border-beige-300 text-warmBrown-700 text-xs font-semibold mb-3">
+      <div className="text-center mb-10 sm:mb-12">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-beige-100 border border-beige-300 text-warmBrown-700 text-xs font-semibold mb-2 sm:mb-3">
           <Gift className="w-3.5 h-3.5 text-beige-600" />
           <span>Birthday Surprise Boxes</span>
         </div>
-        <h2 className="text-3xl sm:text-5xl font-display font-bold text-warmBrown-950 mb-3">
+        <h2 className="text-2xl sm:text-5xl font-display font-bold text-warmBrown-950 mb-2 sm:mb-3 px-2">
           Special Love Vouchers for Misha 🎁
         </h2>
-        <p className="text-warmBrown-600 text-sm sm:text-base max-w-md mx-auto">
+        <p className="text-warmBrown-600 text-xs sm:text-base max-w-md mx-auto px-2">
           Tap each mystery gift box to unwrap your cute birthday coupons and sweet promises!
         </p>
       </div>
 
       {/* Boxes Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {vouchers.map((v) => {
           const isOpen = openedBoxes.includes(v.id);
           const isRedeemed = redeemed.includes(v.id);
@@ -131,10 +131,10 @@ export default function SurpriseBoxes() {
             <div
               key={v.id}
               onClick={() => handleOpen(v.id)}
-              className={`rounded-3xl p-6 transition-all duration-300 relative cursor-pointer overflow-hidden border ${
+              className={`rounded-2xl sm:rounded-3xl p-4 sm:p-6 transition-all duration-300 relative cursor-pointer overflow-hidden border ${
                 isOpen
                   ? "glass-card border-beige-400 shadow-md"
-                  : "bg-gradient-to-br from-beige-100 via-beige-50 to-beige-200 border-beige-300 hover:border-beige-400 hover:scale-[1.02] active:scale-95 shadow-lg"
+                  : "bg-gradient-to-br from-beige-100 via-beige-50 to-beige-200 border-beige-300 hover:border-beige-400 hover:scale-[1.01] active:scale-95 shadow-lg"
               }`}
             >
               {!isOpen ? (

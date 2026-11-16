@@ -73,23 +73,23 @@ With all my heart ❤️`;
           // Sealed Vintage Envelope View
           <div
             onClick={toggleLetter}
-            className="w-full max-w-lg bg-gradient-to-br from-[#f8f3ea] via-[#f4ecdf] to-[#ece1cf] p-8 sm:p-12 rounded-3xl border-2 border-beige-300 shadow-xl cursor-pointer hover:border-beige-500 hover:scale-[1.02] active:scale-95 transition-all duration-300 relative group text-center"
+            className="w-full max-w-lg bg-gradient-to-br from-[#f8f3ea] via-[#f4ecdf] to-[#ece1cf] p-5 sm:p-12 rounded-2xl sm:rounded-3xl border-2 border-beige-300 shadow-xl cursor-pointer hover:border-beige-500 hover:scale-[1.01] active:scale-95 transition-all duration-300 relative group text-center"
           >
             {/* Postal Stamp */}
-            <div className="absolute top-5 right-5 w-16 h-20 border-2 border-dashed border-beige-400 rounded-md flex flex-col items-center justify-center bg-white/80 p-1 shadow-sm">
-              <Heart className="w-5 h-5 text-beige-700 fill-beige-700" />
-              <span className="text-[9px] font-mono text-warmBrown-700 mt-1 uppercase font-bold tracking-wider">
+            <div className="absolute top-3 right-3 sm:top-5 sm:right-5 w-12 h-16 sm:w-16 sm:h-20 border-2 border-dashed border-beige-400 rounded-md flex flex-col items-center justify-center bg-white/80 p-1 shadow-sm">
+              <Heart className="w-4 h-4 sm:w-5 sm:h-5 text-beige-700 fill-beige-700" />
+              <span className="text-[8px] sm:text-[9px] font-mono text-warmBrown-700 mt-0.5 sm:mt-1 uppercase font-bold tracking-wider">
                 AIR MAIL
               </span>
-              <span className="text-[8px] font-mono text-warmBrown-500">MISHA-HBD</span>
+              <span className="text-[7px] sm:text-[8px] font-mono text-warmBrown-500">MISHA</span>
             </div>
 
             {/* Address */}
-            <div className="text-left mb-10 pl-2">
-              <span className="text-[10px] font-mono text-beige-700 uppercase tracking-widest block font-bold">
+            <div className="text-left mb-8 sm:mb-10 pl-1 sm:pl-2 pr-14 sm:pr-20">
+              <span className="text-[9px] sm:text-[10px] font-mono text-beige-700 uppercase tracking-widest block font-bold">
                 CONFIDENTIAL &bull; SPECIAL DELIVERY TO:
               </span>
-              <p className="font-display font-bold text-2xl sm:text-3xl text-warmBrown-950 mt-1">
+              <p className="font-display font-bold text-xl sm:text-3xl text-warmBrown-950 mt-1">
                 Miss Misha ❤️
               </p>
               <p className="font-serif italic text-xs sm:text-sm text-warmBrown-600 mt-0.5">
@@ -98,68 +98,68 @@ With all my heart ❤️`;
             </div>
 
             {/* Teaser note on envelope */}
-            <div className="mb-8 p-3 rounded-2xl bg-white/60 border border-beige-300/80 text-left text-xs text-warmBrown-700 flex items-center gap-2">
+            <div className="mb-6 sm:mb-8 p-3 rounded-xl sm:rounded-2xl bg-white/70 border border-beige-300/80 text-left text-xs text-warmBrown-700 flex items-center gap-2">
               <Feather className="w-4 h-4 text-beige-600 shrink-0" />
-              <span>
+              <span className="text-[11px] sm:text-xs">
                 <strong>Note:</strong> Contains 100% unconditional love, warm memories, and words straight from my soul.
               </span>
             </div>
 
             {/* Wax Seal Center Button */}
             <div className="relative inline-flex items-center justify-center my-2">
-              <div className="w-20 h-20 rounded-full bg-gradient-to-tr from-beige-600 via-warmBrown-700 to-beige-500 p-1 shadow-lg shadow-beige-900/20 group-hover:scale-110 transition-transform flex items-center justify-center border-2 border-beige-200">
+              <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-gradient-to-tr from-beige-600 via-warmBrown-700 to-beige-500 p-1 shadow-lg shadow-beige-900/20 group-hover:scale-110 transition-transform flex items-center justify-center border-2 border-beige-200">
                 <div className="w-full h-full rounded-full bg-gradient-to-b from-warmBrown-800 to-warmBrown-950 flex flex-col items-center justify-center text-center p-1">
-                  <Heart className="w-6 h-6 text-champagne-300 fill-champagne-300 animate-pulse" />
-                  <span className="text-[9px] font-bold tracking-wider text-champagne-200 uppercase mt-0.5">
+                  <Heart className="w-5 h-5 sm:w-6 sm:h-6 text-champagne-300 fill-champagne-300 animate-pulse" />
+                  <span className="text-[8px] sm:text-[9px] font-bold tracking-wider text-champagne-200 uppercase mt-0.5">
                     Open
                   </span>
                 </div>
               </div>
             </div>
 
-            <p className="text-xs text-warmBrown-700 font-medium mt-6 group-hover:text-warmBrown-950 transition-colors flex items-center justify-center gap-1.5">
+            <p className="text-xs text-warmBrown-700 font-medium mt-4 sm:mt-6 group-hover:text-warmBrown-950 transition-colors flex items-center justify-center gap-1.5">
               <Sparkles className="w-3.5 h-3.5 text-beige-600" />
               <span>Tap the wax seal to break open your letter</span>
             </p>
           </div>
         ) : (
           // Unfolded Letter Paper View
-          <div className="w-full max-w-2xl bg-white text-warmBrown-950 rounded-3xl p-7 sm:p-12 shadow-xl border border-beige-300 relative animate-in fade-in zoom-in-95 duration-500">
+          <div className="w-full max-w-2xl bg-white text-warmBrown-950 rounded-2xl sm:rounded-3xl p-5 sm:p-12 shadow-xl border border-beige-300 relative animate-in fade-in zoom-in-95 duration-500">
             {/* Header Actions */}
-            <div className="absolute top-5 right-5 flex items-center gap-2">
+            <div className="absolute top-3 right-3 sm:top-5 sm:right-5 flex items-center gap-1.5 sm:gap-2">
               <button
                 onClick={copyLetter}
-                className="p-2 rounded-full bg-beige-100 hover:bg-beige-200 text-warmBrown-800 transition-colors text-xs flex items-center gap-1 shadow-sm"
+                className="p-1.5 sm:p-2 rounded-full bg-beige-100 hover:bg-beige-200 text-warmBrown-800 transition-colors text-xs flex items-center gap-1 shadow-sm"
                 title="Copy entire letter"
               >
                 {copied ? (
                   <>
                     <Check className="w-3.5 h-3.5 text-emerald-700" />
-                    <span className="text-emerald-700 font-medium">Copied!</span>
+                    <span className="text-emerald-700 font-medium text-[11px] sm:text-xs">Copied!</span>
                   </>
                 ) : (
                   <>
                     <Copy className="w-3.5 h-3.5" />
-                    <span className="text-warmBrown-700">Copy</span>
+                    <span className="text-warmBrown-700 text-[11px] sm:text-xs">Copy</span>
                   </>
                 )}
               </button>
               <button
                 onClick={toggleLetter}
-                className="p-2 rounded-full bg-beige-100 hover:bg-beige-200 text-warmBrown-800 transition-colors text-xs flex items-center gap-1 shadow-sm"
+                className="p-1.5 sm:p-2 rounded-full bg-beige-100 hover:bg-beige-200 text-warmBrown-800 transition-colors text-xs flex items-center gap-1 shadow-sm"
                 title="Fold letter back into envelope"
               >
                 <RotateCcw className="w-3.5 h-3.5" />
-                <span className="text-warmBrown-700">Fold</span>
+                <span className="text-warmBrown-700 text-[11px] sm:text-xs">Fold</span>
               </button>
             </div>
 
             {/* Letter Header */}
-            <div className="border-b border-beige-200 pb-4 mb-6">
-              <span className="text-xs font-mono text-warmBrown-500 uppercase tracking-widest block font-medium">
+            <div className="border-b border-beige-200 pb-3 sm:pb-4 mb-4 sm:mb-6 pr-24 sm:pr-0">
+              <span className="text-[10px] sm:text-xs font-mono text-warmBrown-500 uppercase tracking-widest block font-medium">
                 To My Beloved Misha &bull; On Your Birthday
               </span>
-              <h3 className="font-display font-bold text-2xl sm:text-3xl text-warmBrown-950 mt-1">
+              <h3 className="font-display font-bold text-xl sm:text-3xl text-warmBrown-950 mt-1">
                 My Darling Misha,
               </h3>
             </div>

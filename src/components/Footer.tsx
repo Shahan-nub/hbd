@@ -56,10 +56,10 @@ export default function Footer() {
         </p>
 
         {/* Buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3 mb-8 sm:mb-10 w-full max-w-md sm:max-w-none">
           <button
             onClick={triggerGrandCelebration}
-            className="px-6 py-2.5 rounded-full bg-gradient-to-r from-beige-700 via-warmBrown-700 to-beige-800 hover:from-beige-800 hover:to-warmBrown-800 text-white font-bold text-xs sm:text-sm shadow-md shadow-beige-900/15 hover:scale-105 active:scale-95 transition-all flex items-center gap-2"
+            className="w-full sm:w-auto px-6 py-2.5 rounded-full bg-gradient-to-r from-beige-700 via-warmBrown-700 to-beige-800 hover:from-beige-800 hover:to-warmBrown-800 text-white font-bold text-xs sm:text-sm shadow-md shadow-beige-900/15 hover:scale-105 active:scale-95 transition-all flex items-center justify-center gap-2"
           >
             <Sparkles className="w-4 h-4 text-champagne-300 animate-spin-slow" />
             <span>Launch Grand Fireworks! 🎆</span>
@@ -67,7 +67,7 @@ export default function Footer() {
 
           <button
             onClick={handleShare}
-            className="px-5 py-2.5 rounded-full glass-card hover:bg-beige-200/80 text-warmBrown-800 font-semibold text-xs sm:text-sm border border-beige-300 flex items-center gap-2 transition-all"
+            className="w-full sm:w-auto px-5 py-2.5 rounded-full glass-card hover:bg-beige-200/80 text-warmBrown-800 font-semibold text-xs sm:text-sm border border-beige-300 flex items-center justify-center gap-2 transition-all"
             title="Copy link to send to Misha"
           >
             {copiedLink ? (
@@ -85,7 +85,7 @@ export default function Footer() {
 
           <button
             onClick={scrollToTop}
-            className="p-2.5 rounded-full glass-card hover:bg-beige-200/80 text-warmBrown-800 border border-beige-300 transition-all hover:scale-110"
+            className="p-2.5 rounded-full glass-card hover:bg-beige-200/80 text-warmBrown-800 border border-beige-300 transition-all hover:scale-110 hidden sm:flex items-center justify-center"
             aria-label="Back to top"
           >
             <ArrowUp className="w-4 h-4 text-beige-600" />

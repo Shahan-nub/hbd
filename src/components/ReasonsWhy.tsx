@@ -152,17 +152,17 @@ export default function ReasonsWhy() {
   const progressPercent = Math.round((unlocked.length / reasons.length) * 100);
 
   return (
-    <section id="reasons" className="relative py-20 px-4 max-w-6xl mx-auto">
+    <section id="reasons" className="relative py-14 sm:py-20 px-3 sm:px-4 max-w-6xl mx-auto">
       {/* Section Header */}
-      <div className="text-center mb-10">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-beige-100 border border-beige-300 text-warmBrown-700 text-xs font-semibold mb-3">
+      <div className="text-center mb-8 sm:mb-10">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-beige-100 border border-beige-300 text-warmBrown-700 text-xs font-semibold mb-2 sm:mb-3">
           <Heart className="w-3.5 h-3.5 text-beige-600 fill-beige-600" />
           <span>From My Heart To Yours</span>
         </div>
-        <h2 className="text-3xl sm:text-5xl font-display font-bold text-warmBrown-950 mb-3">
+        <h2 className="text-2xl sm:text-5xl font-display font-bold text-warmBrown-950 mb-2 sm:mb-3 px-2">
           10 Reasons Why I Adore You, Misha ❤️
         </h2>
-        <p className="text-warmBrown-600 text-sm sm:text-base max-w-xl mx-auto mb-6">
+        <p className="text-warmBrown-600 text-xs sm:text-base max-w-xl mx-auto mb-5 sm:mb-6 px-2">
           There are countless reasons, but here are ten that remind me every single day
           how lucky I am to have you. Tap each card to reveal!
         </p>

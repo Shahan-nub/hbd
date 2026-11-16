@@ -98,31 +98,31 @@ export default function StoryMilestones() {
   };
 
   return (
-    <section id="chapters" className="relative py-20 px-4 max-w-6xl mx-auto">
+    <section id="chapters" className="relative py-14 sm:py-20 px-3 sm:px-4 max-w-6xl mx-auto">
       {/* Header */}
-      <div className="text-center mb-14">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-beige-100 border border-beige-300 text-warmBrown-700 text-xs font-semibold mb-3">
+      <div className="text-center mb-10 sm:mb-14">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-beige-100 border border-beige-300 text-warmBrown-700 text-xs font-semibold mb-2 sm:mb-3">
           <Compass className="w-3.5 h-3.5 text-beige-600" />
           <span>Chapters Written in Time</span>
         </div>
-        <h2 className="text-3xl sm:text-5xl font-display font-bold text-warmBrown-950 mb-3">
+        <h2 className="text-2xl sm:text-5xl font-display font-bold text-warmBrown-950 mb-2 sm:mb-3 px-2">
           Chapters of Us ✨
         </h2>
-        <p className="text-warmBrown-600 text-sm sm:text-base max-w-xl mx-auto">
+        <p className="text-warmBrown-600 text-xs sm:text-base max-w-xl mx-auto px-2">
           Every memory with you is a favorite chapter in the story of my life.
           Here are a few moments that mean the world to me.
         </p>
       </div>
 
       {/* Timeline Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
         {milestones.map((m) => {
           const Icon = m.icon;
 
           return (
             <div
               key={m.id}
-              className="glass-card rounded-3xl p-6 sm:p-7 border border-beige-300 flex flex-col justify-between hover:border-beige-500 hover:shadow-lg transition-all duration-300"
+              className="glass-card rounded-2xl sm:rounded-3xl p-4 sm:p-7 border border-beige-300 flex flex-col justify-between hover:border-beige-500 hover:shadow-lg transition-all duration-300"
             >
               <div>
                 {/* Chapter tag and icon */}

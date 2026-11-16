@@ -76,34 +76,34 @@ export default function BirthdayCake() {
   };
 
   return (
-    <section id="cake" className="relative py-20 px-4 text-center max-w-4xl mx-auto">
-      <div className="glass-panel rounded-3xl p-6 sm:p-10 border border-beige-300 shadow-xl relative overflow-hidden">
+    <section id="cake" className="relative py-14 sm:py-20 px-3 sm:px-4 text-center max-w-4xl mx-auto overflow-hidden">
+      <div className="glass-panel rounded-2xl sm:rounded-3xl p-4 sm:p-10 border border-beige-300 shadow-xl relative overflow-hidden">
         {/* Soft background glow */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-beige-200/50 rounded-full blur-3xl pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 sm:w-80 h-64 sm:h-80 bg-beige-200/50 rounded-full blur-3xl pointer-events-none" />
 
         {/* Section title */}
-        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-beige-100 border border-beige-300 text-warmBrown-700 text-xs font-semibold mb-3">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-beige-100 border border-beige-300 text-warmBrown-700 text-xs font-semibold mb-2 sm:mb-3">
           <Sparkles className="w-3.5 h-3.5 text-beige-600" />
           <span>Make A Birthday Wish</span>
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-warmBrown-950 mb-2">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl font-display font-bold text-warmBrown-950 mb-2">
           Misha&apos;s Birthday Cake 🎂
         </h2>
-        <p className="text-warmBrown-600 text-sm sm:text-base max-w-md mx-auto mb-10">
+        <p className="text-warmBrown-600 text-xs sm:text-base max-w-md mx-auto mb-6 sm:mb-10 px-2">
           Close your eyes, make a gentle wish in your heart, and tap to blow out the candles!
         </p>
 
         {/* Cake Container */}
-        <div className="relative flex flex-col items-center justify-center my-6 select-none">
+        <div className="relative flex flex-col items-center justify-center my-4 sm:my-6 select-none max-w-full">
           {/* Candles Row */}
-          <div className="flex justify-center items-end gap-6 sm:gap-10 mb-[-6px] z-20">
+          <div className="flex justify-center items-end gap-3 sm:gap-8 mb-[-4px] sm:mb-[-6px] z-20">
             {[0, 1, 2].map((i) => (
               <div key={i} className="flex flex-col items-center cursor-pointer" onClick={blowCandles}>
                 {/* Flame or Smoke */}
-                <div className="h-8 flex items-center justify-center">
+                <div className="h-7 sm:h-8 flex items-center justify-center">
                   {!candlesBlown ? (
                     <div
-                      className="flame"
+                      className="flame scale-90 sm:scale-100"
                       style={{
                         animationDelay: `${i * 0.25}s`,
                       }}
@@ -116,10 +116,10 @@ export default function BirthdayCake() {
                 </div>
 
                 {/* Candle wick */}
-                <div className="w-1 h-2 bg-warmBrown-700 rounded-t" />
+                <div className="w-1 h-1.5 sm:h-2 bg-warmBrown-700 rounded-t" />
 
                 {/* Candle Body */}
-                <div className="w-4 sm:w-5 h-14 sm:h-16 rounded-t-sm bg-gradient-to-r from-beige-100 via-champagne-100 to-beige-200 shadow-sm border-x border-beige-300 relative overflow-hidden">
+                <div className="w-3.5 sm:w-5 h-11 sm:h-16 rounded-t-sm bg-gradient-to-r from-beige-100 via-champagne-100 to-beige-200 shadow-sm border-x border-beige-300 relative overflow-hidden">
                   <div className="absolute inset-0 bg-[repeating-linear-gradient(45deg,#c5a47e,#c5a47e_3px,transparent_3px,transparent_8px)] opacity-50" />
                 </div>
               </div>
@@ -127,35 +127,35 @@ export default function BirthdayCake() {
           </div>
 
           {/* Tier 1 (Top Tier - Almond Cream) */}
-          <div className="w-36 sm:w-44 h-14 rounded-t-2xl bg-gradient-to-r from-beige-200 via-champagne-100 to-beige-200 shadow-md relative border-t-2 border-beige-100 z-10 flex items-center justify-center">
+          <div className="w-28 sm:w-44 h-11 sm:h-14 rounded-t-2xl bg-gradient-to-r from-beige-200 via-champagne-100 to-beige-200 shadow-md relative border-t-2 border-beige-100 z-10 flex items-center justify-center">
             <div className="absolute -top-3 flex justify-around w-full px-2">
-              <span className="text-sm transform -rotate-12">✨</span>
-              <span className="text-sm">🤍</span>
-              <span className="text-sm transform rotate-12">✨</span>
+              <span className="text-xs sm:text-sm transform -rotate-12">✨</span>
+              <span className="text-xs sm:text-sm">🤍</span>
+              <span className="text-xs sm:text-sm transform rotate-12">✨</span>
             </div>
-            <div className="w-full h-full flex justify-around items-end pb-1 text-warmBrown-800 text-xs font-bold tracking-widest uppercase">
+            <div className="w-full h-full flex justify-around items-end pb-1 text-warmBrown-800 text-[10px] sm:text-xs font-bold tracking-widest uppercase">
               Misha
             </div>
           </div>
 
           {/* Tier 2 (Middle Tier - Soft Latte Cream) */}
-          <div className="w-52 sm:w-64 h-16 rounded-t-2xl bg-gradient-to-r from-beige-300 via-beige-200 to-beige-300 shadow-lg relative border-t-2 border-beige-100 -mt-1 flex items-center justify-center">
-            <div className="text-warmBrown-800 font-romantic text-2xl tracking-wide drop-shadow-sm">
+          <div className="w-40 sm:w-64 h-13 sm:h-16 rounded-t-2xl bg-gradient-to-r from-beige-300 via-beige-200 to-beige-300 shadow-lg relative border-t-2 border-beige-100 -mt-1 flex items-center justify-center">
+            <div className="text-warmBrown-800 font-romantic text-lg sm:text-2xl tracking-wide drop-shadow-sm">
               Sweetest Soul
             </div>
           </div>
 
           {/* Tier 3 (Bottom Tier - Warm Caramel / Taupe) */}
-          <div className="w-68 sm:w-80 h-20 rounded-t-2xl bg-gradient-to-r from-beige-400 via-beige-300 to-beige-400 shadow-xl relative border-t-2 border-beige-200 -mt-1 flex items-center justify-around px-4">
-            <span className="text-base text-warmBrown-700">✦</span>
-            <span className="text-warmBrown-950 font-display font-bold tracking-wider text-sm sm:text-base">
+          <div className="w-52 sm:w-80 h-16 sm:h-20 rounded-t-2xl bg-gradient-to-r from-beige-400 via-beige-300 to-beige-400 shadow-xl relative border-t-2 border-beige-200 -mt-1 flex items-center justify-around px-3 sm:px-4">
+            <span className="text-xs sm:text-base text-warmBrown-700">✦</span>
+            <span className="text-warmBrown-950 font-display font-bold tracking-wider text-xs sm:text-base">
               HAPPY BIRTHDAY
             </span>
-            <span className="text-base text-warmBrown-700">✦</span>
+            <span className="text-xs sm:text-base text-warmBrown-700">✦</span>
           </div>
 
           {/* Plate / Stand */}
-          <div className="w-80 sm:w-96 h-4 rounded-full bg-gradient-to-r from-beige-300 via-champagne-200 to-beige-300 shadow-md border-t border-beige-400" />
+          <div className="w-60 sm:w-96 max-w-[92vw] h-3 sm:h-4 rounded-full bg-gradient-to-r from-beige-300 via-champagne-200 to-beige-300 shadow-md border-t border-beige-400" />
         </div>
 
         {/* Action Controls */}
